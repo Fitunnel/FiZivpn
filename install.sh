@@ -760,7 +760,7 @@ fi
 clear
 figlet "UDP ZIVPN" | lolcat
 echo -e "${YELLOW}┌───────────// ${CYAN}FIZIVPN SERVER PREMIUM${YELLOW} //─────────────┐${NC}"
-_draw_info_panel
+# _draw_info_panel
 _draw_service_status
 echo -e "${YELLOW}│                                                    │${NC}"
 echo -e "${YELLOW}│   ${LIGHT_BLUE}1)${NC} ${BOLD_WHITE}Create Account                                ${YELLOW}│${NC}"
