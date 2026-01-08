@@ -1141,6 +1141,41 @@ echo "Opening firewall port 5888 for API..."
 iptables -I INPUT -p tcp --dport 5888 -j ACCEPT
 echo "─── API Setup Complete ───"
 echo "─── Integrating management script into the system ───"
-echo "────────────────────────────────────────────────────"
-echo "Advanced management setup complete."
-echo "────
+cp "$0" /usr/local/bin/zivpn-manager
+chmod +x /usr/local/bin/zivpn-manager
+show_menu
+}
+function main() {
+if [ "$#" -gt 0 ]; then
+local command="$1"
+shift
+case "$command" in
+create_account)
+_create_account_logic "$@"
+;;
+delete_account)
+_delete_account_logic "$@"
+;;
+renew_account)
+_renew_account_logic "$@"
+;;
+trial_account)
+_create_trial_account_logic "$@"
+;;
+*)
+echo "Error: Unknown command '$command'"
+exit 1
+;;
+esac
+exit $?
+fi
+if [ ! -f "/etc/systemd/system/zivpn.service" ]; then
+run_setup
+fi
+while true; do
+show_menu
+done
+}
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+main "$@"
+fi
