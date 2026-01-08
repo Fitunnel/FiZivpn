@@ -44,7 +44,7 @@ wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/update.sh -O /us
 > - Setup systemd service New `zivpn.service`  
 > - Setup firewall UFW & NAT  
 > - Set default password "zi"  
-> - Membuat menu otomatis saat login  
+> ❎ Membuat menu otomatis saat login  
 
 ---
 
