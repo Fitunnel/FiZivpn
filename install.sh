@@ -792,7 +792,7 @@ case $choice in
 10) wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/update.sh -O /usr/local/bin/update-manager && chmod +x /usr/local/bin/update-manager && /usr/local/bin/update-manager && read -p "Tekan Enter untuk kembali ke menu..." && /usr/local/bin/zivpn-manager ;;
 11) update_expiry_from_license_url && read -p "Tekan Enter untuk kembali ke menu..." && /usr/local/bin/zivpn-manager ;;
 12) wget https://raw.githubusercontent.com/Fitunnel/AutoScriptFull/main/speedtest.sh -O /usr/bin/speedtest.sh && chmod +x /usr/bin/speedtest.sh && yes | /usr/bin/speedtest.sh && read -p "Tekan Enter untuk kembali ke menu..." && /usr/local/bin/zivpn-manager ;;
-0) exit 0 ;;
+0) menu ;;
 *) echo "Invalid option. Please try again." ;;
 esac
 }
