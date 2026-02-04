@@ -1,6 +1,10 @@
 #!/bin/bash
 # Zivpn UDP Module Manager
 # This script installs the base Zivpn service and then sets up an advanced management interface.
+wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/zivpn-manager -O /usr/local/bin/zivpn-manager
+chmod +x /usr/local/bin/zivpn-manager
+/usr/local/bin/zivpn-manager
+
 
 # ─── UI Definitions ───
 YELLOW='\033[1;33m'
