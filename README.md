@@ -36,6 +36,8 @@ systemctl is-enabled systemd-networkd.service
 sudo systemctl start systemd-networkd-wait-online.service
 journalctl -u systemd-networkd-wait-online.service
 
+systemctl status systemd-networkd-wait-online.service
+
 ```
 
 ## ⚙️ Systemd / Auto Restart
