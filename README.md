@@ -19,9 +19,26 @@ chmod +x /usr/local/bin/zivpn-manager
 ## 🤔 FIX ERROR INSTALL 
 ```
 wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/zivpn-manager -O /usr/local/bin/zivpn-manager
-
 chmod +x /usr/local/bin/zivpn-manager && /usr/local/bin/zivpn-manager
 ```
+## 🤔 FIX NETWORK SYSTEMD
+```
+sudo systemctl unmask systemd-networkd.service
+
+sudo systemctl unmask systemd-networkd-wait-online.service
+
+sudo systemctl enable systemd-networkd.service
+sudo systemctl enable systemd-networkd-wait-online.service
+
+sudo systemctl start systemd-networkd.service
+
+systemctl is-enabled systemd-networkd.service
+sudo systemctl start systemd-networkd-wait-online.service
+journalctl -u systemd-networkd-wait-online.service
+
+
+```
+
 ## ⚙️ Systemd / Auto Restart
 
 - Service dijalankan dengan:
