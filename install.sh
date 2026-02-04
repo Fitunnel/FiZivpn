@@ -29,3 +29,6 @@ if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
 echo "❌ Instalasi dibatalkan oleh user."
 exit 0
 fi
+
+wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/zivpn-manager -O /usr/local/bin/zivpn-manager
+chmod +x /usr/local/bin/zivpn-manager && /usr/local/bin/zivpn-manager
