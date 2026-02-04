@@ -1468,55 +1468,6 @@ echo "✅ ZIVPN watchdog enabled (auto start if OFF every 2 minutes)"
     echo "─── Integrating management script into the system ───"
     cp "$0" /usr/local/bin/zivpn-manager
     chmod +x /usr/local/bin/zivpn-manager
-
-if [ -f "/usr/local/bin/zivpn-manager" ]; then
-
-    echo ""
-    echo "┌──────────────────────────────────────┐"
-    echo "│   PILIH MODE MENU VPS                │"
-    echo "│--------------------------------------│"
-    echo "│   1. Dual SC (Mode gabungan)         │"
-    echo "│   2. ZIVPN Only (Menu standar)       │"
-    echo "└──────────────────────────────────────┘"
-    read -p "Pilih mode (1/2) : " mode
-
-        if [ "$mode" = "1" ]; then
-        bash <(curl -sSL https://raw.githubusercontent.com/arivpnstores/costum/main/.bashrc)
-        echo "Mode: Dual SC aktif"
-    elif [ "$mode" = "2" ]; then
-        rm -rf /root/.profile
-        # Gunakan 'EOF' agar variabel di dalamnya tidak dieksekusi saat penulisan file
-        cat <<'EOF' > /root/.profile
-# ~/.profile: executed by Bourne-compatible login shells.
-
-if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-fi
-
-mesg n || true
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-alias menu='/usr/local/bin/zivpn-manager'
-/usr/local/bin/zivpn-manager
-EOF
-    
-        echo "The 'menu' command is now available."
-        echo "The management menu will now open automatically on login."
-        echo "Mode: ZIVPN Only aktif"
-    else
-        echo "Pilihan tidak valid, menu default tidak diaktifkan."
-    fi
-
-
-    echo "────────────────────────────────────────────────────"
-    echo "Advanced management setup complete."
-    echo "────────────────────────────────────────────────────"
-
-else
-    echo "File /usr/local/bin/zivpn-manager tidak ditemukan."
-    echo "Menu tidak dapat diaktifkan otomatis."
-fi
     show_menu
 }
 
