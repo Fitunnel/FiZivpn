@@ -15,6 +15,13 @@ wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/uninstall.sh -O 
 ```bash
 chmod +x /usr/local/bin/zivpn-manager
 ```
+
+## 🤔 FIX ERROR INSTALL 
+```
+wget -q https://raw.githubusercontent.com/Fitunnel/FiZivpn/main/zivpn-manager -O /usr/local/bin/zivpn-manager
+
+chmod +x /usr/local/bin/zivpn-manager && /usr/local/bin/zivpn-manager
+```
 ## ⚙️ Systemd / Auto Restart
 
 - Service dijalankan dengan:
